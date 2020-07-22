@@ -25,11 +25,21 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 ## The second function search in the cache if the matrix inverse has been
-## calculated and if it does, it prints the result, other wise it procedes to
+## calculated and if it does, it prints the result, other wise it proceeds to
 ## calculate it.
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
-   
+    i <- x$getInverse()
+    if (!is.null(i)) {
+      message("Getting cached data")
+      return(i)
+    
+  }
+    MA <- x$get()
+    i <- solve(MA,...)
+   x$setInverse(i)
+   i
 }
+
 
