@@ -4,16 +4,30 @@
 ## The functions that would create a special object that would store the matrix 
 ## and catches it inverse.
 
-## Write a short comment describing this function
+## This first function would create a special matrix object, this special matrix would 
+## catch its inverse.  
 
 makeCacheMatrix <- function(x = matrix()) {
-
+    i <- NULL
+    set <- function(y){
+      x <<- y
+      i <<- NULL
+    }
+    get <- function() x
+    
+    setInverse <- function(inverse) i <<- inverse
+    getInverse <- function() i
+    list(set=set,
+         get=get,
+         setInverse=setInverse,
+         getInverse=getInverse)
+  
 }
 
 
-## Write a short comment describing this function
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
+   
 }
 
