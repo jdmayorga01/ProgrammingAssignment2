@@ -37,9 +37,7 @@ cacheSolve <- function(x, ...) {
     
   }
     MA <- x$get()
-    i <- solve(MA,...)
+    i <- solve(MA,...) # Solve function finds the inverse of a matrix
    x$setInverse(i)
    i
 }
-
-
